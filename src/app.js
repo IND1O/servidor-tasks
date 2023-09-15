@@ -8,16 +8,16 @@ import cors from "cors";
 
 const app = express();
 
-const whitelist = [
-  "http://localhost:5173",
-  "https://dashing-gecko-62bddc.netlify.app",
-];
+// const whitelist = [
+//   "http://localhost:5173",
+//   "https://dashing-gecko-62bddc.netlify.app",
+// ];
 
 app.use(
   cors({
-    //origin: "http://localhost:5173",
+    origin: "http://localhost:5173",
     //origin: "https://dashing-gecko-62bddc.netlify.app",
-    origin: whitelist,
+    //origin: whitelist,
     credentials: true,
   })
 );

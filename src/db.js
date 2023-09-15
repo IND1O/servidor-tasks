@@ -1,11 +1,13 @@
 import mongoose from "mongoose";
 
+import { config } from "dotenv";
+
+config();
+
 export const connectDb = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://indiodev73:Admin123456@cluster0.nkjo3bn.mongodb.net/merndb"
-    );
-    console.log(">>> DB Conectada");
+    await mongoose.connect(process.env.DB_MONGO);
+    console.log(">>> Base de Datos >Conectada<");
   } catch (error) {
     console.log(error);
   }
